@@ -6,63 +6,49 @@
     <title>Acceuil</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: white; /* Adaptez si nécessaire */
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
         }
-        .login-box {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .login-box input {
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            width: 80%;
-        }
-        .login-box button {
-            padding: 10px 20px;
+
+        input[type="password"] {
             border: none;
-            background: #007bff;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .login-box button:hover {
-            background: #0056b3;
+            background: none;
+            outline: none;
+            font-size: 16px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: black; /* Pour un texte visible */
         }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>Entrez le code pour accéder</h2>
-        <input type="password" id="accessCode" placeholder="Code d'accès">
-        <button onclick="checkCode()">Entrer</button>
-        <p id="error-message" style="color: red; display: none;">Code incorrect. Veuillez réessayer.</p>
-    </div>
-
+    <!-- Zone de texte discrète -->
+    <input 
+        type="password" 
+        id="accessCode" 
+        placeholder="" 
+        onkeypress="handleKeyPress(event)">
+    
     <script>
-        function checkCode() {
-            const correctCode = "<0PM§"; // Code correct
-            const userCode = document.getElementById('accessCode').value;
+        const correctCode = "0PM§"; // Définissez ici votre code d'accès
 
-            if (userCode === correctCode) {
-                // Enregistrer dans localStorage que l'accès est autorisé
-                localStorage.setItem('accessGranted', 'true');
-                // Rediriger vers la page protégée
-                window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
-            } else {
-                // Afficher un message d'erreur
-                const errorMessage = document.getElementById('error-message');
-                errorMessage.style.display = "block";
+        function handleKeyPress(event) {
+            if (event.key === "Enter") { // Si l'utilisateur appuie sur "Entrée"
+                const userCode = event.target.value;
+                if (userCode === correctCode) {
+                    // Redirection si le code est correct
+                    window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
+                } else {
+                    // Ne rien faire si le code est incorrect
+                    event.target.value = ""; // Réinitialiser la zone de texte
+                }
             }
         }
     </script>
