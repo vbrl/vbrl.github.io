@@ -82,7 +82,9 @@
       }
     </style>
     <script>
-      function checkPassword() {
+      function checkPassword(event) {
+        event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
         var password = document.getElementById("password").value;
 
         // Vérifier si le mot de passe est correct
@@ -96,13 +98,10 @@
         }
       }
 
-      // Événement de soumission du formulaire
       window.onload = function() {
+        // Ajouter l'événement de soumission à l'élément du formulaire
         var form = document.getElementById("passwordForm");
-        form.addEventListener("submit", function(event) {
-          event.preventDefault(); // Empêche la soumission du formulaire
-          checkPassword(); // Appelle la fonction de vérification du mot de passe
-        });
+        form.addEventListener("submit", checkPassword);
       }
     </script>
   </head>
