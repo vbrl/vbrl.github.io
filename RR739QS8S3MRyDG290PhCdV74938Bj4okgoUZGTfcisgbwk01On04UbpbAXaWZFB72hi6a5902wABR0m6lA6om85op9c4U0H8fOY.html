@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenu Protégé</title>
+</head>
+<body>
+    <script>
+        // Vérifier si l'accès est autorisé dans le localStorage
+        if (localStorage.getItem('accessGranted') !== 'true') {
+            alert("Accès interdit. Vous serez redirigé vers la page d'accès.");
+            window.location.href = "index.html"; // Redirection
+        }
+    </script>
+
+    <h1>Bienvenue dans le contenu protégé</h1>
+    <p>Ceci est une page réservée aux utilisateurs ayant le code.</p>
+</body>
+</html>
