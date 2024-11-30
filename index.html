@@ -77,33 +77,31 @@
 </div>
 
 
-<script>
-    document.getElementById('password-input').addEventListener('keydown', function(event) {
-        // Check if the pressed key is Enter
-        if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent default form submission
-            
-            const password = this.value;
-            const correctPassword = '0PM§';
-            
-            if (password === correctPassword) {
-                // Redirect to the specified URL
-                window.location.href = 'https://vbrl.github.io/RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html';
-            } else {
-                // Disable input and show error
-                this.disabled = true;
-                this.style.backgroundColor = '#ffdddd';
+    <script>
+        document.getElementById('password-input').addEventListener('keydown', function(event) {
+            // Check if the pressed key is Enter
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent default form submission
                 
-                // Re-enable after 3 seconds
-                setTimeout(() => {
-                    this.disabled = false;
-                    this.style.backgroundColor = '';
-                    this.value = ''; // Clear the input
-                }, 3000);
+                const password = this.value;
+                const correctPassword = '0PM§';
+                
+                if (password === correctPassword) {
+                    // Redirect to the specified URL
+                    window.location.href = 'https://vbrl.github.io/RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html';
+                } else {
+                    // Disable input and show error
+                    this.disabled = true;
+                    this.style.backgroundColor = '#ffdddd';
+                    
+                    // Re-enable after 3 seconds
+                    setTimeout(() => {
+                        this.disabled = false;
+                        this.style.backgroundColor = '';
+                        this.value = ''; // Clear the input
+                    }, 3000);
+                }
             }
-        }
-    });
-</script>
-
-  
+        });
+    </script>
 </body></html>
