@@ -1,66 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Page avec zone de mot de passe cachée</title>
     <style>
-        /* Style général pour la page */
+        /* Styles pour la page */
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            width: 100vw;
+            background-color: #f4f4f4;
+        }
+
+        /* Zone de texte cachée en bas à droite */
+        #password-container {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 120px;
+            opacity: 0; /* Masqué par défaut */
+            transition: opacity 0.3s ease;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black; /* Fond noir */
-            color: white; /* Texte blanc */
-            font-family: Arial, sans-serif;
-            font-size: 24px;
         }
 
-        /* Style pour la zone de texte en bas à droite */
-        input[type="password"] {
+        /* Lorsque la souris survole la zone, elle devient visible */
+        #password-container:hover {
+            opacity: 1;
+        }
+
+        /* Champ de mot de passe */
+        #password-input {
+            width: 100%;
+            padding: 5px;
             border: none;
-            background: none;
             outline: none;
-            font-size: 1px; /* Texte minuscule */
-            width: 1px; /* Largeur minimale */
-            height: 1px; /* Hauteur minimale */
-            color: transparent; /* Texte invisible */
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
+            background-color: transparent;
+            color: #000;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Masquer les caractères visibles par des points noirs */
+        #password-input::placeholder {
+            color: transparent;
+        }
+
+        /* Le curseur se transforme pour indiquer que l'on peut interagir */
+        #password-container:hover #password-input {
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <!-- Message principal -->
-    <p>Welcome to 0.github.io</p>
 
-    <!-- Zone de texte discrète pour le mot de passe -->
-    <input 
-        type="password" 
-        id="accessCode" 
-        placeholder="" 
-        onkeypress="handleKeyPress(event)">
+    <!-- Contenu principal de la page -->
+    <div>
+        <h1>Bienvenue sur la page secrète</h1>
+        <p>Contenu visible de la page...</p>
+    </div>
+
+    <!-- Zone de mot de passe cachée -->
+    <div id="password-container">
+        <input type="password" id="password-input" placeholder="Entrez le mot de passe" />
+    </div>
 
     <script>
-        const correctCode = "0PM§"; // Définissez ici votre mot de passe
+        // Mot de passe correct
+        const correctPassword = "0PM§";
+        const passwordInput = document.getElementById("password-input");
 
-        function handleKeyPress(event) {
-            if (event.key === "Enter") { // Lorsque l'utilisateur appuie sur Entrée
-                const userCode = event.target.value;
-                if (userCode === correctCode) {
-                    // Rediriger vers une autre page si le code est correct
-                    window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
-                } else {
-                    // Ne rien faire si le code est incorrect
-                    event.target.value = ""; // Réinitialiser la zone de texte
-                }
+        // Fonction pour rediriger l'utilisateur si le mot de passe est correct
+        passwordInput.addEventListener("input", function () {
+            if (passwordInput.value === correctPassword) {
+                // Redirection vers la page demandée
+                window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
             }
-        }
+        });
     </script>
 </body>
 </html>
