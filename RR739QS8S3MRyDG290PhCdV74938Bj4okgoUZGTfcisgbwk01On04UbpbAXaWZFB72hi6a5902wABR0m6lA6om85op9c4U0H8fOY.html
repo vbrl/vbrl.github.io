@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone de Texte Commune</title>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        textarea {
+            width: 80%;
+            height: 200px;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zone de Texte Commune</h1>
+    <textarea id="sharedText" placeholder="Écrivez ici..."></textarea>
+    <script>
+        // Configuration Firebase
+        const firebaseConfig = {
+            apiKey: "VOTRE_API_KEY",
+            authDomain: "VOTRE_AUTH_DOMAIN",
+            databaseURL: "VOTRE_DATABASE_URL",
+            projectId: "VOTRE_PROJECT_ID",
+            storageBucket: "VOTRE_STORAGE_BUCKET",
+            messagingSenderId: "VOTRE_MESSAGING_SENDER_ID",
+            appId: "VOTRE_APP_ID"
+        };
+
+        // Initialiser Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Référence à la base de données
+        const textRef = database.ref('sharedText');
+
+        const textarea = document.getElementById('sharedText');
+
+        // Écouter les mises à jour
+        textRef.on('value', (snapshot) => {
+            textarea.value = snapshot.val() || '';
+        });
+
+        // Mettre à jour la base de données lorsque l'utilisateur écrit
+        textarea.addEventListener('input', () => {
+            textRef.set(textarea.value);
+        });
+    </script>
+</body>
+</html>
 
