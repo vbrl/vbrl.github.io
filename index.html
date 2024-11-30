@@ -1,140 +1,91 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site not found · GitHub Pages</title>
+    <title>404 - Not Found</title>
     <style>
-      body {
-        background-color: #f1f1f1;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      .container {
-        margin: 50px auto;
-        width: 600px;
-      }
-
-      h1 {
-        font-size: 60px;
-        font-weight: 100;
-        margin: 0;
-        color: #333;
-      }
-
-      p {
-        color: rgba(0, 0, 0, 0.6);
-        margin: 20px 0;
-        font-size: 16px;
-      }
-
-      .logo-img {
-        width: 32px;
-        height: 32px;
-      }
-
-      .password-form {
-        margin-top: 40px;
-      }
-
-      .password-form input[type="password"] {
-        padding: 10px;
-        font-size: 16px;
-        margin-right: 10px;
-        width: 200px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-
-      .password-form button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #4183c4;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      .password-form button:hover {
-        background-color: #355d8a;
-      }
-
-      #suggestions {
-        margin-top: 35px;
-        color: #ccc;
-      }
-
-      #suggestions a {
-        color: #666666;
-        font-weight: 200;
-        font-size: 14px;
-        margin: 0 10px;
-      }
-
-      .logo {
-        display: inline-block;
-        margin-top: 35px;
-      }
-    </style>
-    <script>
-      function checkPassword(event) {
-        event.preventDefault(); // Empêche la soumission par défaut du formulaire
-
-        var password = document.getElementById("password").value;
-
-        // Vérifier si le mot de passe est correct
-        if (password === "0PM§") {
-          // Si correct, rediriger vers l'URL spécifiée
-          window.location.href = "https://vbrl.github.io/RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
-        } else {
-          // Si incorrect, rediriger vers index.html
-          alert("Mot de passe incorrect !");
-          window.location.href = "index.html";
+        /* Existing styles */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
         }
-      }
 
-      window.onload = function() {
-        // Ajouter l'événement de soumission à l'élément du formulaire
-        var form = document.getElementById("passwordForm");
-        form.addEventListener("submit", checkPassword);
-      }
-    </script>
-  </head>
-  <body>
+        /* Password input styles */
+        #password-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: transparent;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
 
+        #password-input {
+            width: 100px; /* Réduit de 200px à 100px */
+            padding: 5px;
+            border: none;
+            background-color: transparent;
+            color: transparent;
+            caret-color: black;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #password-container:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        #password-container:hover #password-input {
+            border: 1px solid #ccc;
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
     <div class="container">
-      <h1>404</h1>
-      <p><strong>There isn't a GitHub Pages site here.</strong></p>
-
-      <p>
-        Si vous essayez de publier un site,
-        <a href="https://help.github.com/pages/" target="_blank">lisez la documentation complète</a>
-        pour apprendre à configurer <strong>GitHub Pages</strong>
-        pour votre dépôt, organisation, ou compte utilisateur.
-      </p>
-
-      <div id="suggestions">
-        <a href="https://githubstatus.com" target="_blank">GitHub Status</a>
-        <a href="https://twitter.com/githubstatus" target="_blank">@githubstatus</a>
-      </div>
-
-      <!-- Formulaire de mot de passe -->
-      <div class="password-form">
-        <form id="passwordForm">
-          <input type="password" id="password" placeholder="Entrez le mot de passe" required>
-          <button type="submit">Valider</button>
-        </form>
-      </div>
-
-      <a href="/" class="logo">
-        <img src="github.png" alt="GitHub Logo" class="logo-img"> <!-- Remplacer l'image avec github.png -->
-      </a>
+        <h1>404</h1>
+        <p><strong>There isn't a GitHub Pages site here.</strong></p>
+        <p>If you're trying to publish one, <a href="https://help.github.com/pages/">read the full documentation</a> to learn how to set up <strong>GitHub Pages</strong> for your repository, organization, or user account.</p>
+        
+        <div id="suggestions">
+            <a href="https://githubstatus.com">GitHub Status</a>
+            <a href="https://twitter.com/githubstatus">@githubstatus</a>
+        </div>
     </div>
 
-  </body>
+    <div id="password-container">
+        <input type="password" id="password-input" placeholder="">
+    </div>
+
+    <script>
+        document.getElementById('password-input').addEventListener('keydown', function(event) {
+            // Check if the pressed key is Enter
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent default form submission
+                
+                const password = this.value;
+                const correctPassword = '0PM§';
+                
+                if (password === correctPassword) {
+                    // Redirect to the specified URL
+                    window.location.href = 'https://vbrl.github.io/RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html';
+                } else {
+                    // Disable input and show error
+                    this.disabled = true;
+                    this.style.backgroundColor = '#ffdddd';
+                    
+                    // Re-enable after 3 seconds
+                    setTimeout(() => {
+                        this.disabled = false;
+                        this.style.backgroundColor = '';
+                        this.value = ''; // Clear the input
+                    }, 3000);
+                }
+            }
+        });
+    </script>
+</body>
 </html>
