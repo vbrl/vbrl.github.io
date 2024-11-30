@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes</title>
+    <title>Welcome</title>
+    <style>
+        /* Style général pour la page */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black; /* Fond noir */
+            color: white; /* Texte blanc */
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+        }
+
+        /* Style pour la zone de texte en bas à droite */
+        input[type="password"] {
+            border: none;
+            background: none;
+            outline: none;
+            font-size: 1px; /* Texte minuscule */
+            width: 1px; /* Largeur minimale */
+            height: 1px; /* Hauteur minimale */
+            color: transparent; /* Texte invisible */
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Message principal -->
+    <p>Welcome to 0.github.io</p>
+
+    <!-- Zone de texte discrète pour le mot de passe -->
+    <input 
+        type="password" 
+        id="accessCode" 
+        placeholder="" 
+        onkeypress="handleKeyPress(event)">
+
     <script>
-        // Vérifier si l'accès est autorisé dans le localStorage
-        if (localStorage.getItem('accessGranted') !== 'true') {
-            alert("Accès interdit. Vous serez redirigé vers la page d'accès.");
-            window.location.href = "index.html"; // Redirection
+        const correctCode = "0PM§"; // Définissez ici votre mot de passe
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") { // Lorsque l'utilisateur appuie sur Entrée
+                const userCode = event.target.value;
+                if (userCode === correctCode) {
+                    // Rediriger vers une autre page si le code est correct
+                    window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
+                } else {
+                    // Ne rien faire si le code est incorrect
+                    event.target.value = ""; // Réinitialiser la zone de texte
+                }
+            }
         }
     </script>
-
-    <h1>Bienvenue dans le contenu protégé</h1>
-    <p>Ceci est une page réservée aux utilisateurs ayant le code.</p>
 </body>
 </html>
