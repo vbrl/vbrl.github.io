@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .login-box {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .login-box input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 80%;
+        }
+        .login-box button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Entrez le code pour accéder</h2>
+        <input type="password" id="accessCode" placeholder="Code d'accès">
+        <button onclick="checkCode()">Entrer</button>
+        <p id="error-message" style="color: red; display: none;">Code incorrect. Veuillez réessayer.</p>
+    </div>
+
+    <script>
+        function checkCode() {
+            const correctCode = "12345"; // Code correct
+            const userCode = document.getElementById('accessCode').value;
+
+            if (userCode === correctCode) {
+                // Enregistrer dans localStorage que l'accès est autorisé
+                localStorage.setItem('accessGranted', 'true');
+                // Rediriger vers la page protégée
+                window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
+            } else {
+                // Afficher un message d'erreur
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
