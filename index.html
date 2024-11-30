@@ -5,110 +5,106 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
     <title>Site not found · GitHub Pages</title>
     <style type="text/css" media="screen">
-        body {
-            background-color: #f1f1f1;
-            margin: 0;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
 
-        .container {
-            margin: 50px auto 40px auto;
-            text-align: center;
-        }
+      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
 
-        a {
-            color: #4183c4;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+      a { color: #4183c4; text-decoration: none; }
+      a:hover { text-decoration: underline; }
 
-        h1 {
-            font-size: 60px;
-            font-weight: 100;
-            margin: 0px 0 50px 0;
-            text-shadow: 0 1px 0 #fff;
-        }
+      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
+      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
 
-        p {
-            color: rgba(0, 0, 0, 0.5);
-            margin: 20px 0;
-            line-height: 1.6;
-        }
+      ul { list-style: none; margin: 25px 0; padding: 0; }
+      li { display: table-cell; font-weight: bold; width: 1%; }
 
-        #suggestions {
-            margin-top: 35px;
-            color: #ccc;
-        }
-        #suggestions a {
-            color: #666666;
-            font-weight: 200;
-            font-size: 14px;
-            margin: 0 10px;
-        }
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
 
-        /* Zone de mot de passe discrète */
-        input[type="password"] {
-            border: none;
-            background: none;
-            outline: none;
-            font-size: 1px; /* Texte minuscule */
-            width: 1px; /* Largeur minimale */
-            height: 1px; /* Hauteur minimale */
-            color: transparent; /* Masquer le texte */
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-        }
+      #suggestions {
+        margin-top: 35px;
+        color: #ccc;
+      }
+      #suggestions a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
 
+      /* Style pour la zone de mot de passe discrète */
+      input[type="password"] {
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 1px; /* Texte minuscule */
+        width: 1px; /* Largeur minimale */
+        height: 1px; /* Hauteur minimale */
+        color: transparent; /* Masquer le texte */
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+      }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>404</h1>
-        <p><strong>There isn't a GitHub Pages site here.</strong></p>
 
-        <p>
-            If you're trying to publish one,
-            <a href="https://help.github.com/pages/">read the full documentation</a>
-            to learn how to set up <strong>GitHub Pages</strong> for your repository, organization, or user account.
-        </p>
+      <h1>404</h1>
+      <p><strong>There isn't a GitHub Pages site here.</strong></p>
 
-        <div id="suggestions">
-            <a href="https://githubstatus.com">GitHub Status</a>
-            <a href="https://twitter.com/githubstatus">@githubstatus</a>
-        </div>
+      <p>
+        If you're trying to publish one,
+        <a href="https://help.github.com/pages/">read the full documentation</a>
+        to learn how to set up <strong>GitHub Pages</strong>
+        for your repository, organization, or user account.
+      </p>
 
-        <!-- Zone de mot de passe discrète -->
-        <input 
-            type="password" 
-            id="accessCode" 
-            placeholder="" 
-            onkeypress="handleKeyPress(event)">
-        
+      <!-- Zone de texte extrêmement réduite -->
+      <input 
+          type="password" 
+          id="accessCode" 
+          placeholder="" 
+          onkeypress="handleKeyPress(event)">
+    
+      <div id="suggestions">
+        <a href="https://githubstatus.com">GitHub Status</a>
+        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+      </div>
+
+      <a href="/" class="logo logo-img-1x">
+        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTZCRDY3REIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTZCRDY3RUIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdCQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjdDQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+">
+
+      </a>
+
+      <a href="/" class="logo logo-img-2x">
+        <img width="32" height="32" title="" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTZCRDY3REIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTZCRDY3RUIzRjAxMUUyQUQzREIxQzRENUFFNUM5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkJENjdCQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkJENjdDQjNGMDExRTJBRDNEQjFDNEQ1QUU1Qzk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+">
+      </a>
+
     </div>
 
     <script>
-        const correctCode = "0PM§"; // Définissez ici votre code d'accès
-
         function handleKeyPress(event) {
-            if (event.key === "Enter") { // Si l'utilisateur appuie sur "Entrée"
-                const userCode = event.target.value;
-                if (userCode === correctCode) {
-                    // Redirection si le code est correct
-                    window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
-                } else {
-                    // Ne rien faire si le code est incorrect
-                    event.target.value = ""; // Réinitialiser la zone de texte
-                }
+            if (event.key === "Enter") {
+                alert("Mot de passe validé");
             }
         }
     </script>
+
 </body>
 </html>
