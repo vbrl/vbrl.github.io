@@ -1,26 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <style>
-        /* Style général pour la page */
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
+    <title>Site not found · GitHub Pages</title>
+    <style type="text/css" media="screen">
         body {
+            background-color: #f1f1f1;
             margin: 0;
-            padding: 0;
-            height: 100vh;
-            width: 100vw;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black; /* Fond noir */
-            color: white; /* Texte blanc */
-            font-family: Arial, sans-serif;
-            font-size: 24px;
+            height: 100vh;
         }
 
-        /* Style pour la zone de texte en bas à droite */
+        .container {
+            margin: 50px auto 40px auto;
+            text-align: center;
+        }
+
+        a {
+            color: #4183c4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 60px;
+            font-weight: 100;
+            margin: 0px 0 50px 0;
+            text-shadow: 0 1px 0 #fff;
+        }
+
+        p {
+            color: rgba(0, 0, 0, 0.5);
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        #suggestions {
+            margin-top: 35px;
+            color: #ccc;
+        }
+        #suggestions a {
+            color: #666666;
+            font-weight: 200;
+            font-size: 14px;
+            margin: 0 10px;
+        }
+
+        /* Zone de mot de passe discrète */
         input[type="password"] {
             border: none;
             background: none;
@@ -28,32 +60,48 @@
             font-size: 1px; /* Texte minuscule */
             width: 1px; /* Largeur minimale */
             height: 1px; /* Hauteur minimale */
-            color: transparent; /* Texte invisible */
+            color: transparent; /* Masquer le texte */
             position: absolute;
             bottom: 5px;
             right: 5px;
         }
+
     </style>
 </head>
 <body>
-    <!-- Message principal -->
-    <p>Welcome to 0.github.io</p>
 
-    <!-- Zone de texte discrète pour le mot de passe -->
-    <input 
-        type="password" 
-        id="accessCode" 
-        placeholder="" 
-        onkeypress="handleKeyPress(event)">
+    <div class="container">
+        <h1>404</h1>
+        <p><strong>There isn't a GitHub Pages site here.</strong></p>
+
+        <p>
+            If you're trying to publish one,
+            <a href="https://help.github.com/pages/">read the full documentation</a>
+            to learn how to set up <strong>GitHub Pages</strong> for your repository, organization, or user account.
+        </p>
+
+        <div id="suggestions">
+            <a href="https://githubstatus.com">GitHub Status</a>
+            <a href="https://twitter.com/githubstatus">@githubstatus</a>
+        </div>
+
+        <!-- Zone de mot de passe discrète -->
+        <input 
+            type="password" 
+            id="accessCode" 
+            placeholder="" 
+            onkeypress="handleKeyPress(event)">
+        
+    </div>
 
     <script>
-        const correctCode = "0PM§"; // Définissez ici votre mot de passe
+        const correctCode = "0PM§"; // Définissez ici votre code d'accès
 
         function handleKeyPress(event) {
-            if (event.key === "Enter") { // Lorsque l'utilisateur appuie sur Entrée
+            if (event.key === "Enter") { // Si l'utilisateur appuie sur "Entrée"
                 const userCode = event.target.value;
                 if (userCode === correctCode) {
-                    // Rediriger vers une autre page si le code est correct
+                    // Redirection si le code est correct
                     window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
                 } else {
                     // Ne rien faire si le code est incorrect
@@ -64,4 +112,3 @@
     </script>
 </body>
 </html>
-s
