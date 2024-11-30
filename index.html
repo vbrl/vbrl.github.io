@@ -1,57 +1,64 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreur 404</title>
-    <style>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
+    <title>Site not found · GitHub Pages</title>
+    <style type="text/css" media="screen">
         body {
-            text-align: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f1f1f1;
             margin: 0;
-            padding: 50px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
-        #password-container {
-            margin-top: 20px;
+        .container {
+            margin: 50px auto 40px auto;
+            width: 600px;
+            text-align: center;
         }
         #password-input {
             padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+        #password-input::placeholder {
+            color: transparent;
+        }
+        #password-input:hover, #password-input:focus {
             border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px; /* Ajustez la largeur selon vos besoins */
         }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p>Il n'y a pas de site GitHub Pages ici.</p>
-    <p>Si vous essayez de publier un site, <a href="https://help.github.com/pages/">lisez la documentation complète</a> pour apprendre à configurer GitHub Pages pour votre dépôt, organisation ou compte d'utilisateur.</p>
-    
-    <div id="password-container">
-        <input type="password" id="password-input" placeholder="Entrez le mot de passe" />
+    <div class="container">
+        <h1>404</h1>
+        <p><strong>There isn't a GitHub Pages site here.</strong></p>
+        <p>
+            If you're trying to publish one,
+            <a href="https://help.github.com/pages/">read the full documentation</a>
+            to learn how to set up <strong>GitHub Pages</strong>
+            for your repository, organization, or user account.
+        </p>
+        <div id="password-container">
+            <input type="password" id="password-input" placeholder="">
+        </div>
     </div>
-
     <script>
         document.getElementById('password-input').addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
-                event.preventDefault(); // Prevent default form submission
-                
+                event.preventDefault();
                 const password = this.value;
                 const correctPassword = '0PM§';
-                
                 if (password === correctPassword) {
-                    // Redirect to the specified URL
                     window.location.href = 'https://vbrl.github.io/RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html';
                 } else {
-                    // Disable input and show error
                     this.disabled = true;
                     this.style.backgroundColor = '#ffdddd';
-                    
-                    // Re-enable after 3 seconds
                     setTimeout(() => {
                         this.disabled = false;
                         this.style.backgroundColor = '';
-                        this.value = ''; // Clear the input
+                        this.value = '';
                     }, 3000);
                 }
             }
