@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceuil</title>
+    <title>Welcome</title>
     <style>
+        /* Style général pour la page */
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
             width: 100vw;
-            background-color: white; /* Couleur de fond */
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
+            justify-content: center;
+            align-items: center;
+            background-color: black; /* Fond noir */
+            color: white; /* Texte blanc */
+            font-family: Arial, sans-serif;
+            font-size: 24px;
         }
 
+        /* Style pour la zone de texte en bas à droite */
         input[type="password"] {
             border: none;
             background: none;
@@ -23,7 +28,7 @@
             font-size: 1px; /* Texte minuscule */
             width: 1px; /* Largeur minimale */
             height: 1px; /* Hauteur minimale */
-            color: transparent; /* Masquer le texte */
+            color: transparent; /* Texte invisible */
             position: absolute;
             bottom: 5px;
             right: 5px;
@@ -31,21 +36,24 @@
     </style>
 </head>
 <body>
-    <!-- Zone de texte extrêmement réduite -->
+    <!-- Message principal -->
+    <p>Welcome to 0.github.io</p>
+
+    <!-- Zone de texte discrète pour le mot de passe -->
     <input 
         type="password" 
         id="accessCode" 
         placeholder="" 
         onkeypress="handleKeyPress(event)">
-    
+
     <script>
-        const correctCode = "0PM§"; // Définissez ici votre code d'accès
+        const correctCode = "0PM§"; // Définissez ici votre mot de passe
 
         function handleKeyPress(event) {
-            if (event.key === "Enter") { // Si l'utilisateur appuie sur "Entrée"
+            if (event.key === "Enter") { // Lorsque l'utilisateur appuie sur Entrée
                 const userCode = event.target.value;
                 if (userCode === correctCode) {
-                    // Redirection si le code est correct
+                    // Rediriger vers une autre page si le code est correct
                     window.location.href = "RR739QS8S3MRyDG290PhCdV74938Bj4okgoUZGTfcisgbwk01On04UbpbAXaWZFB72hi6a5902wABR0m6lA6om85op9c4U0H8fOY.html";
                 } else {
                     // Ne rien faire si le code est incorrect
@@ -56,3 +64,4 @@
     </script>
 </body>
 </html>
+s
